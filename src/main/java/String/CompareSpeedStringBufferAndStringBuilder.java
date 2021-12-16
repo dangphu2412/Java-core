@@ -8,7 +8,7 @@ public class CompareSpeedStringBufferAndStringBuilder {
         {
             StringBuffer sb = new StringBuffer();
             t = System.currentTimeMillis();
-            for (int i = N; i --> 0 ;) {
+            for (int i = N; i-- > 0; ) {
                 sb.append("a");
             }
             System.out.println(System.currentTimeMillis() - t);
@@ -17,7 +17,7 @@ public class CompareSpeedStringBufferAndStringBuilder {
         {
             StringBuilder sb = new StringBuilder();
             t = System.currentTimeMillis();
-            for (int i = N; i > 0 ; i--) {
+            for (int i = N; i > 0; i--) {
                 sb.append("a");
             }
             System.out.println(System.currentTimeMillis() - t);

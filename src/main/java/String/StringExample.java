@@ -21,6 +21,7 @@ public class StringExample {
 
         System.out.println("This string " + input + (isPalindrome ? " a palindrome" : " not a palindrome"));
     }
+
     public static void main(String[] args) {
         String a = "String Pool";
 
@@ -46,7 +47,7 @@ public class StringExample {
         /*
         Also concat primitive value
          */
-        String s=50+30+"Sachin"+true+12L;
+        String s = 50 + 30 + "Sachin" + true + 12L;
         System.out.println(s);//80Sachin4040
 
         // Return abc
@@ -67,7 +68,7 @@ public class StringExample {
         System.out.println(v2);
         System.out.println(v3);
 
-        StringTokenizer st = new StringTokenizer("my name is fus","/+");
+        StringTokenizer st = new StringTokenizer("my name is fus", "/+");
         while (st.hasMoreTokens()) {
             System.out.println(st.nextToken());
         }

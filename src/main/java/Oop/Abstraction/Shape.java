@@ -4,6 +4,7 @@ import Oop.Encapsulation.AccessModifier;
 
 interface ShapeAction {
     void clear();
+
     /*
     Java 8 support default method
      */
@@ -22,6 +23,7 @@ public abstract class Shape implements ShapeAction {
     Shape() {
         System.out.println("Calling constructor of abstract class");
     }
+
     abstract void draw();
 
     /*

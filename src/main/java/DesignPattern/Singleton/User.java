@@ -27,6 +27,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User { username: "+ username + "\n age:" + age + " }";
+        return "User { username: " + username + "\n age:" + age + " }";
     }
 }

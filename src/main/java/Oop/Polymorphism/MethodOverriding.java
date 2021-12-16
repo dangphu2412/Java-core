@@ -22,7 +22,9 @@ class ParentCovariant {
         System.out.println("Normal Block called");
     }
 }
-class SubCovariant extends ParentCovariant {}
+
+class SubCovariant extends ParentCovariant {
+}
 
 class Human {
     /*
@@ -38,12 +40,15 @@ class Human {
         /*var = "Oh shit final variable can be assigned in constructor";*/
         System.out.println("Constructor of Human called");
     }
+
     {
         var = "Oh shit final variable can be assigned in constructor";
     }
+
     static void sleep() {
         System.out.println("Human is sleeping");
     }
+
     void talk() {
         System.out.println("Im a human");
     }
@@ -63,6 +68,7 @@ class Human {
 
 class Man extends Human {
     boolean gender = true;
+
     Man() {
         /*
         Super must be called first

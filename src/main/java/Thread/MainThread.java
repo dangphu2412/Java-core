@@ -38,7 +38,8 @@ public class MainThread {
             executor.execute(worker);//calling execute method of ExecutorService
         }
         executor.shutdown();
-        while (!executor.isTerminated()) {   }
+        while (!executor.isTerminated()) {
+        }
 
         System.out.println("Finished all threads");
     }

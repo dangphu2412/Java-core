@@ -9,7 +9,8 @@ public abstract class Character {
         this.weaponBehavior = weaponBehavior;
     }
 
-    Character() {}
+    Character() {
+    }
 
     public void fight() {
         weaponBehavior.useWeapon();

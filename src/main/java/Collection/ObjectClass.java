@@ -15,7 +15,7 @@ public class ObjectClass {
         InheritanceAccessModifier cloneObj = (InheritanceAccessModifier) obj.clone();
 
 
-        for(int i=0;i<args.length;i++) {
+        for (int i = 0; i < args.length; i++) {
             System.out.println(args[i]);
         }
         System.out.println("After waiting");

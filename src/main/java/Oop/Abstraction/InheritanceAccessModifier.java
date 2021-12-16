@@ -16,7 +16,7 @@ public class InheritanceAccessModifier extends AccessModifier implements Cloneab
         System.out.println("Protected method has been override");
     }
 
-    public Object clone()throws CloneNotSupportedException{
+    public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 }
