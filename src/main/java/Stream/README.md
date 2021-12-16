@@ -86,3 +86,19 @@ The "full barrier operation" means that all the upstream operations must be perf
 
 ### Short-circuiting terminal operations
 - You can see something like: limit, findFirst, findAny, anyMatch, allMatch or noneMatch
+
+### Stream parallel
+- Stream can be easily transfer from sequential into parallel
+- Be careful when using parallel due to:
+  - Performance Implications
+    - The Overhead
+    - Splitting Source - Costs
+    - Merging Costs
+    - Memory Locality
+    - The NQ Model
+- When to use:
+  - Parallelism can bring performance benefits in certain use cases. But parallel streams cannot be considered as a magical performance booster. So, sequential streams should still be used as default during development.
+
+  - A sequential stream can be converted to a parallel one when we have actual performance requirements. Given those requirements, we should first run a performance measurement and consider parallelism as a possible optimization strategy.
+
+  - A large amount of data and many computations done per element indicate that parallelism could be a good option.
