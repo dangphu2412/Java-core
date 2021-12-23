@@ -30,27 +30,40 @@ public class TestStream {
     public static List<Integer> statelessOpExp() {
         List<Integer> integers = Arrays.asList(4, 2, 3, 2, 1);
         return integers.stream()
-                .filter(i -> i % 2 == 0)
-                .map(i -> i * 2)
+                .filter(i -> {
+                    System.out.print("Filtering " + i + "\n");
+                    return  i % 2 == 0;
+                })
+                .map(i -> {
+                    System.out.print("Mapping " + i + "\n");
+                    return i * 2;
+                })
                 .collect(Collectors.toList());
     }
 
     public static List<Integer> stateFullOpExp() {
         List<Integer> integers = Arrays.asList(4, 2, 3, 2, 1);
         return integers.stream()
-                .filter(i -> i % 2 == 0)
+                .parallel()
+                .filter(i -> {
+                    System.out.print("Filtering " + i + "\n");
+                    return  i % 2 == 0;
+                })
                 .sorted()
-                .map(i -> i * 2)
+                .map(i -> {
+                    System.out.print("Mapping " + i + "\n");
+                    return i * 2;
+                })
                 .collect(Collectors.toList());
     }
 
     public static void exampleOfTraverseDistinctAndSort() {
         Stream<Integer> stream = Stream.of(2,1,3,5,3)
                 .peek(i -> System.out.println("source: "+i))
-                .distinct()
-                .peek(i -> System.out.println("distinct: "+i))
                 .sorted()
-                .peek(i -> System.out.println("sorted: "+i));
+                .peek(i -> System.out.println("sorted: "+i))
+                .distinct()
+                .peek(i -> System.out.println("distinct: "+i));
         System.out.println("commencing terminal operation");
         stream.forEachOrdered(i -> System.out.println("terminal: "+i));
     }
@@ -70,8 +83,8 @@ public class TestStream {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 //        System.out.print(stateFullOpExp());
-//        exampleOfTraverseDistinctAndSort();
-        example2OfTraverse();
+        exampleOfTraverseDistinctAndSort();
+//        example2OfTraverse();
         long finishTime = System.currentTimeMillis();
         System.out.println("That took: " + (finishTime - startTime) + " ms");
     }
